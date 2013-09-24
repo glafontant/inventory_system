@@ -1,0 +1,27 @@
+<% if @inventory.errors.any? %>
+  <ul>
+    <%= @inventory.errors.full_messages.each do |message|%>
+      <li><%= message %></li>
+      <% end %>
+  </ul>
+<% end %>
+
+<%= form_for(@inventory) do |f|%>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity %><br>
+    <%= f.text_field :quantity %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+
+<% end %>

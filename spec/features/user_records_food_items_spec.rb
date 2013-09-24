@@ -13,20 +13,20 @@ feature "Recording individual food items", %Q{
   # * If I specify the required information, my inventory entry is recorded.
 
   scenario "Recording the correct information" do
-    visit '/inventory_systems/new'
-    fill_in 'Title', with => 'Blueberries'
-    fill_in 'Description', with => 'Organic and locally produced'
-    fill_in 'Quantity', with => 12
+    visit new_inventory_path 
+    fill_in 'Title', :with => 'Blueberries'
+    fill_in 'Description', :with => 'Organic and locally produced'
+    fill_in 'Quantity', :with => 12
 
     click_on 'Submit'
     expect(page).to have_content 'Inventory entry was successfully recorded'
   end
 
   scenario "Submitting incorrect information" do
-    visit '/inventory_systems/new'
-    fill_in 'Title', with => ''
-    fill_in 'Description', with => ''
-    fill_in 'Quantity', with => nil
+    visit new_inventory_path 
+    fill_in 'Title', :with => ''
+    fill_in 'Description', :with => ''
+    fill_in 'Quantity', :with => nil
 
     click_on 'Submit'
     expect(page).to_not have_content 'Inventory entry was successfully recorded'
