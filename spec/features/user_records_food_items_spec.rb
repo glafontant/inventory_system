@@ -22,7 +22,7 @@ feature "Recording individual food items", %Q{
     expect(page).to have_content 'Inventory entry was successfully recorded'
   end
 
-  scenario "Recording the correct information" do
+  scenario "Submitting incorrect information" do
     visit '/inventory_systems/new'
     fill_in 'Title', with => ''
     fill_in 'Description', with => ''
