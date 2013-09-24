@@ -19,7 +19,7 @@ development:
   encoding: unicode
   database: inventory_system_development
   pool: 5
-  username: 
+  username: inventory_system
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -48,7 +48,7 @@ test:
   encoding: unicode
   database: inventory_system_test
   pool: 5
-  username: 
+  username: inventory_system
   password:
 
 production:
@@ -56,5 +56,5 @@ production:
   encoding: unicode
   database: inventory_system_production
   pool: 5
-  username: 
+  username: inventory_system
   password:
